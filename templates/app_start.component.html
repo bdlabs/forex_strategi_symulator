@@ -1,14 +1,6 @@
 <div>
-	1
-</div>
-<div>
-	2
-</div>
-<div>
-	3
-</div>
-<div>
-	4
+	<button (click)="addAction()">Add</button>
+	<button (click)="deleteAllAction()">Delete All</button>
 </div>
 
-<orders *ngFor="#order of orders">{{order}}</orders>
+<orders *ngFor="#order of orders.get()" [orderinput]="order" (orderoutput)="orderDeleteAction($event)" ></orders>
