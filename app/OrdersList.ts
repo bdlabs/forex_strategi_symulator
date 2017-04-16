@@ -20,10 +20,8 @@ export class OrdersList {
 
 	del(id:number): boolean {
 		//this.orders.forEach(function(a,b,c){ console.log(a+" "+b+" "+c); });
-		console.log(this.orders);
 		let _this = this;
 		this.orders.some(function(v,i,o){
-			console.log(v.id+" "+id+" "+i);
 			if( v.id === id ){
 				_this.orders.splice(i,1);
 				return true;

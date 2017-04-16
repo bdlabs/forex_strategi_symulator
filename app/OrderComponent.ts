@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from 'angular2/core';
-import {Order} from './Order';
+import {Order, OrderType} from './Order';
 
 @Component({
     selector: 'orders',
@@ -20,4 +20,9 @@ export class OrderComponent {
 		this.orderoutput.next( this.orderinput.id );
 	}
 
+	getOrderTypeClass() {
+		if( this.orderinput.type == OrderType.OP_SELL )
+			return "glyphicon glyphicon-chevron-down";
+		return "glyphicon glyphicon-chevron-up";
+	}
 }

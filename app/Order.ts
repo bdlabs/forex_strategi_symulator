@@ -1,5 +1,6 @@
 export enum OrderType {
-
+	OP_BUY = 0,
+	OP_SELL =1
 }
 
 export class Order {
@@ -8,6 +9,7 @@ export class Order {
 	public price: number 	= 0.00000;
 	public type: number 	= 0.00000;
 	public lot: number 		= 0.00000;
+	public profit: number   = 0.00000;
 
 	constructor() {
 
