@@ -29,6 +29,19 @@ export class OrdersList {
 		});
 	}
 
+	find(id:number):Order{
+		let _this = this;
+		let order:Order;
+		this.orders.some(function(v,i,o){
+			if( v.id === id ){
+				order = v;
+				return v;
+			}
+		});
+
+		return order;	
+	}
+
 	clear(): boolean {
 		this.orders = [];
 	}

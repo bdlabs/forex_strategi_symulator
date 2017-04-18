@@ -1,5 +1,7 @@
 <div>
 	<span class="{{ getOrderTypeClass() }}"></span><span>{{ orderinput.id }}</span><span>{{ orderinput.price }}</span><span>{{ orderinput.lot }}</span>
-	<span>{{ orderinput.profit }}</span>
+	<span>{{ orderinput.profit }}</span><!-- <span>{{ values }}</span> {{ fruits?.length }} <span *ngFor="#list of fruits">{{list.id}} - {{ list.name }}</span> --> 
+	<!--<button class="btn btn-danger btn-xs" (click)="clickAddVal()">Add</button>-->
 	<button class="btn btn-danger btn-xs" (click)="deleteAction()">Delete</button>
+	<!--<button class="btn btn-danger btn-xs" (click)="clearAction()">Clear</button>-->
 </div>

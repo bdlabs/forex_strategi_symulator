@@ -1,10 +1,15 @@
 <div>
-	<button (click)="addActionBuy()" class="btn btn-success">Buy</button>
-	<button (click)="addActionSell()" class="btn btn-danger">Sell</button>&nbsp;&nbsp;
-	<button (click)="deleteAllAction()" class="btn btn-danger">Delete All</button>
+	<button (click)="addActionBuy()" class="btn btn-success btn-xs">Buy</button>
+	<button (click)="addActionSell()" class="btn btn-danger btn-xs">Sell</button>
+	<label><input type="text" [(ngModel)]='lot' style="width:50px;">Lot</label>
+	<button (click)="deleteAllAction()" class="btn btn-danger btn-xs">Delete All</button>
 </div>
 <div>
-	Ask: {{priceask}}&nbsp;Bid: {{pricebid}}
+	Ask: {{priceask}}&nbsp;Bid: {{pricebid}}&nbsp;Wallet:{{ wallet?.many() }}
 </div>
 
-<orders *ngFor="#order of orders.get()" [orderinput]="order" (orderoutput)="orderDeleteAction($event)" ></orders>
+<div class="c_scroll">
+	<div class="_amove" draggable (draggableoutput)="scrollMoveAction($event)" ></div>
+</div>
+
+<orders *ngFor="#order of orders.get()" dataToAddInput="static" [adddatainput]="order.id" [orderinput]="order" (orderoutput)="orderDeleteAction($event)"></orders>
